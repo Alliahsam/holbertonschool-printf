@@ -14,7 +14,7 @@
  */
 typedef struct func_type
 {
-        chart;
+        char;
         int (f) (va_list);
 }func_t;
 int (get_func(const char format))(va_list);
