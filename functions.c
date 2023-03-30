@@ -11,11 +11,11 @@ int print_char(va_list args)
         _putchar(va_arg(args, int));
         return (1);
 }
-/
+/**
  *print_str - prints string
  *@args: arguments
  *Return: string
- /
+ */
 int print_str(va_list args)
 {
         int j;

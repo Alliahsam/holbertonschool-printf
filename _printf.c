@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdarg.h>
 #include "main.h"
 
@@ -6,45 +7,47 @@
  * @format: string to print
  * Return: y
  */
-
 int _printf(const char *format, ...)
 {
-int i = 0, j = 0;
-int (*f)(va_list);
-va_list args;
+    va_list args;
+    int count = 0;
 
-va_start(args, format);
-if (format == NULL || !format[i + 1])
-return (-1);
-while (format[i])
-{
-if (format[i] == '%')
-{
-if (format[i + 1])
-{
-if (format[i + 1] != 'c' && format[i + 1] != 's'
-&& format[i + 1] != '%' && format[i + 1] != 'd'
-&& format[i + 1] != 'i')
-{
-j += _putchar(format[i]);
-j += _putchar(format[i + 1]);
-i++;
-}
-else
-{
-f = call_function(&format[i + 1]);
-j += f(args);
-i++;
-}
-}
-}
-else
-{
-_putchar(format[i]);
-j++;
-}
-i++;
-}
-va_end(args);
-return (j);
+    va_start(args, format);
+
+    while (*format != '\0') {
+        if (*format == '%') {
+            format++;
+
+            if (*format == 'c') {
+                char c = (char)va_arg(args, int);
+                putchar(c);
+                count++;
+            }
+
+            else if (*format == 's') {
+                char *s = va_arg(args, char *);
+
+                while (*s != '\0') {
+                    putchar(*s);
+                    s++;
+                    count++;
+                }
+            }
+
+            else if (*format == '%') {
+                putchar('%');
+                count++;
+            }
+        }
+
+        else {
+            putchar(*format);
+            count++;
+        }
+        format++;
+    }
+
+    va_end(args);
+    return count;
+
 }
