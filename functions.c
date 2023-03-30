@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  *print_char - prints character
  *@args: argument
@@ -11,6 +12,7 @@ int print_char(va_list args)
         _putchar(va_arg(args, int));
         return (1);
 }
+
 /**
  *print_str - prints string
  *@args: arguments
@@ -19,7 +21,7 @@ int print_char(va_list args)
 int print_str(va_list args)
 {
         int j;
-        charstr = va_arg(args, char *);
+        char str = va_arg(args, char *);
         if (str == NULL)
         str = "(null)";
         for (j = 0; str[j]; j++)
@@ -28,6 +30,7 @@ int print_str(va_list args)
         }
         return (j);
 }
+
 /**
  *print_pct - prints character "%"
  *@args : arguments
