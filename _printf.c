@@ -32,7 +32,7 @@ i++;
 }
 else
 {
-f = call_function(&format[i + 1]);
+f = get_func(&format[i + 1]);
 j += f(args);
 i++;
 }
