@@ -20,7 +20,7 @@ int print_decimal(va_list args)
 	if (value < 0)
 	{
 		len = len + _putchar('-');
-		abs = value - 1;
+		abs = value * - 1;
 	}
 	else
 		abs = value;
