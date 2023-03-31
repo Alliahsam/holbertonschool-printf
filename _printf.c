@@ -1,53 +1,51 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "main.h"
 
 /**
- * _printf - copies printf function
- * @format: string to print
- * Return: y
+ *_printf - prints to output according to format
+ *@format: character string
+ *
+ *Return: number of characters printed
  */
+
 int _printf(const char *format, ...)
 {
-    va_list args;
-    int count = 0;
+	int i = 0, count = 0;
+	int (*f)(va_list);
+	va_list args;
 
-    va_start(args, format);
+	va_start(args, format);
+	if (format == NULL || !format[i + 1])
+		return (-1);
 
-    while (*format != '\0') {
-        if (*format == '%') {
-            format++;
-
-            if (*format == 'c') {
-                char c = (char)va_arg(args, int);
-                putchar(c);
-                count++;
-            }
-
-            else if (*format == 's') {
-                char *s = va_arg(args, char *);
-
-                while (*s != '\0') {
-                    putchar(*s);
-                    s++;
-                    count++;
-                }
-            }
-
-            else if (*format == '%') {
-                putchar('%');
-                count++;
-            }
-        }
-
-        else {
-            putchar(*format);
-            count++;
-        }
-        format++;
-    }
-
-    va_end(args);
-    return count;
-
+	while (format[i])
+	{
+		if (format[i] == '%')
+		{
+		if (format[i + 1])
+		{
+		if (format[i + 1] != 'c' && format[i + 1] != 's'
+		&& format[i + 1] != '%' && format[i + 1] != 'd'
+		&& format[i + 1] != 'i')
+	{
+		count += _putchar(format[i]);
+		count += _putchar(format[i + 1]);
+		i++;
+	}
+	else
+	{
+		f = get_func(&format[i + 1]);
+		count += f(args);
+		i++;
+	}
+	}
+	}
+	else
+	{
+	_putchar(format[i]);
+	count++;
+	}
+	i++;
+	}
+	va_end(args);
+	return (count);
 }

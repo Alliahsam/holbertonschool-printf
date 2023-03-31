@@ -9,28 +9,16 @@
 #include <unistd.h>
 
 /**
-
-* Struct func-type - type of structure
-
-* Struct func-type-type of structure
-
-* @t: pointer to argument
-
-* @f: pointer - function associated with argumentis
-
-*/
+ * Struct func-type - type of structure
+ * @t: pointer to argument
+ * @f: pointer - function associated with argumentis
+ */
 
 typedef struct func_type
-
 {
-
-  char *t;
-
-  int (*f)(va_list args);
-
+char *t;
+int (*f)(va_list args);
 } func_t;
-
- 
 
 int (*get_func(const char *format))(va_list);
 
@@ -46,5 +34,6 @@ int print_pctent(va_list args);
 
 int print_decimal(va_list args);
 
- 
+int print_decimal(va_list args);
+
 #endif

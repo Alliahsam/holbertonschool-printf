@@ -14,7 +14,7 @@ return (1);
 }
 
 /**
- * print_str - prints string
+ * print_string - prints string
  * @args: arguments
  * Return: string
  */
@@ -34,7 +34,7 @@ return (j);
 }
 
 /**
- * print_pct - prints character "%"
+ * print_pctent - prints character "%"
  * @args : arguments
  * Return: character "%"
  */
