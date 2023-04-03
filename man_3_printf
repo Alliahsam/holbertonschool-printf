@@ -1,0 +1,45 @@
+This is the man page - Holberton School team project "printf"
+
+SH NAME
+.B _printf
+- formatted output conversation
+
+.SH SYNOPSIS
+.B #include \main.h
+.B int _printf(const char *);
+
+SH DESCRIPTION
+The function write output to stoudout using the format string and contains specifiers.The specifier use argument to print the variable length.
+
+.SH RETURN VALUE
+On succesful return, FB_printf()\FR returns the numbers of characters (bytes) printed excluding the null byte
+If is NULL or if the functions encounters errors, it's returns -1
+
+.SH SPECIFIERS
+d, i
+Both these specifiers are for int argument and convert the variable to a decimal number, positive or negative
+c
+The argument is converted to an unsigned char and printed
+s
+The char argument is expected to be a pointer to a character array. Not included characters terminating NULL byte are written
+%
+The char is written, No argument is converted
+
+.SH EXAMPLE
+.IP -print a string
+_printf("This is a string");
+_printf("%s\n", "I am a string too!");
+.IP  print char.
+_printf("character:[%c]\n", 'H');
+.IP -print integer
+_printf("%d, %i\n", 2, 5);
+
+SH SEE ALSO
+printf(3)
+
+.SH BUGS
+No bugs known
+
+.SH AUTHORS
+Samira Ouled, Ericka Carmella Ny Fitahiana, Sabrina Papeau
+
