@@ -9,11 +9,11 @@ Project Requirements
 • Global variables are not allowed
 • Authorized functions and macros:
 
-o write (man 2 write)
-o malloc (man 3 malloc)
-o free (man 3 free)
-o va_start (man 3 va_start) o va_end (man 3 va_end)
-o va_copy (man 3 va_copy) o va_arg (man 3 va_arg)
+• write (man 2 write)
+• malloc (man 3 malloc)
+• free (man 3 free)
+• va_start (man 3 va_start) o va_end (man 3 va_end)
+• va_copy (man 3 va_copy) o va_arg (man 3 va_arg)
 
 Mandatory Tasks
 
@@ -31,7 +31,10 @@ File Descriptions
 • functions.c: - contains three functions that allow printing characters, strings, and the '%' character on the standard output using 'va_list' arguments.
 • get_func.c: - contains function definition of get_func and determines which printing function to call based on the conversion specification passed as an argument.
 
-Authors
-Samira Ouled - Github
-Ericka Carmella Ny Fitahiana - Github 
-Sabrina Papeau - Github
+
+
+
+
+Samira Ouled
+Ericka Carmella Ny Fitahiana  
+Sabrina Papeau 
