@@ -31,10 +31,11 @@ File Descriptions
 • functions.c: - contains three functions that allow printing characters, strings, and the '%' character on the standard output using 'va_list' arguments.
 • get_func.c: - contains function definition of get_func and determines which printing function to call based on the conversion specification passed as an argument.
 
-
+![flowchart](https://user-images.githubusercontent.com/79006648/229448712-211d2c42-b93b-43b1-ad90-885bcbd1dc87.png)
 
 
 
 Samira Ouled
 Ericka Carmella Ny Fitahiana  
 Sabrina Papeau 
+
